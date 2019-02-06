@@ -321,3 +321,75 @@ Is this method a mutator?
 Exercise 2.42 Give the class two constructors. One should take a single parameter that specifies the price, and the other should take no parameter and set the price to be a default value of your choosing. Test your implementation by creating machines via the two different constructors.
 	
 	BlueJ asks to select which constructor should be used. 
+
+Exercise 2.43 Check that the behavior we have discussed here is accurate by creating a TicketMachine instance and calling insertMoney with various actual parameter values. Check the balance both before and after calling insertMoney. Does the balance ever change in the cases when an error message is printed? Try to predict what will happen if you enter the value zero as the parameter, and then see if you are right.
+
+Exercise 2.44 Predict what you think will happen if you change the test in insertMoney to use the greater-than or equal-to operator:
+  if(amount >= 0)
+Check your predictions by running some tests. What difference does it make to the behavior of the method?
+
+	You can now input 0
+Exercise 2.45 In the shapes project we looked at in Chapter 1 we used a boolean field to control a feature of the circle objects. What was that feature? 
+
+	visibility
+	
+Was it well suited to being controlled by a type with only two different values?
+
+	Yes
+
+Exercise 2.47 After a ticket has been printed, could the value in the balance field ever be set to a negative value by subtracting price from it? Justify your answer.
+
+	No because the ticket will only print when the balance is greater than the price. 
+
+Exercise2.48 So far we have introduced you to two arithmetic operators, + and –, that can be used in arithmetic expressions in Java. Take a look at Appendix D to find out what other operators are available.
+
+Exercise 2.49 Write an assignment statement that will store the result of multiplying two variables, price and discount, into a third variable, saving.
+
+	int saving = price * discount;
+
+Exercise 2.50 Write an assignment statement that will divide the value in total by the value in count and store the result in mean.
+
+	int mean = total / value;
+
+Exercise 2.51 Write an if statement that will compare the value in price against the value in budget. If price is greater than budget then print the message ‘Too expensive’, otherwise print the message ‘Just right’.
+
+	if (price > budget) {
+		System.out.print("Too expensive");
+	} else {
+		System.out.print("Just right");
+	}
+
+Exercise 2.52 Modify your answer to the previous exercise so that the message if the price is too high includes the value of your budget.
+
+	if (price > budget) {
+		System.out.print("Too expensive, my budget is only " + budget);
+	} else {
+		System.out.print("Just right");
+	}
+	
+Exercise 2.53 Why does the following version of refundBalance not give the same results as the original?
+  public int refundBalance()
+  {
+balance = 0;
+      return balance;
+  }
+What tests can you run to demonstrate that it does not?
+Exercise 2.54 What happens if you try to compile the TicketMachine class with
+the following version of refundBalance?
+  public int refundBalance()
+  {
+      return balance;
+      balance = 0; }
+What do you know about return statements that helps to explain why this version does not compile?
+	
+	An error is thrown because return statements exit the current method. 
+	
+Exercise 2.55 Add a new method, emptyMachine, that is designed to simulate emptying the machine of money. It should both return the value in total and reset total to be zero.
+	
+Exercise 2.56 Is emptyMachine an accessor, a mutator, or both?
+	
+	both
+	
+Exercise 2.57 Rewrite the printTicket method so that it declares a local variable, amountLeftToPay. This should then be initialized to contain the difference between price and balance. Rewrite the test in the conditional statement to check the value of amountLeftToPay. If its value is less than or equal to zero, a ticket should be printed, otherwise an error message should be printed stating the amount still required. Test your version to ensure that it behaves in exactly the same way as the original version.
+
+Save the better-ticket-machine project under a new name and implement your changes to the new project.
