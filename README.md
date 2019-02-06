@@ -24,13 +24,13 @@ Work through all these exercises. You edit this file with your answers for these
 * Experiment with inserting different amounts of money before printing tickets.
 	* Do you notice anything strange about the machine’s behavior?
 	
-	Yes
+		Yes
 	* What happens if you insert too much money into the machine – do you receive any refund?
 	
-	No
+		No
 	* What happens if you do not insert enough and then try to print a ticket?
 	
-	It prints a ticket
+		It prints a ticket
 
 ### Exercise 2.4
 * Try to obtain a good understanding of a ticket machine’s behavior by interacting with it on the object bench before we start looking at how the `TicketMachine` class is implemented in the next section.
@@ -40,13 +40,13 @@ Work through all these exercises. You edit this file with your answers for these
 	* Buy a ticket from that machine.
 	* Does the printed ticket look different?
 	
-	Yes, the ticket includes the price in cents
+		Yes, the ticket includes the price in cents
 
 ### Exercise 2.6
 * Write out what you think the outer wrappers of the `Student` and `LabClass` classes might look like – do not worry about the inner part.
 
-public class Student {}
-public class LabClass {}
+	public class Student {}
+	public class LabClass {}
 
 ### Exercise 2.7
 Does it matter whether we write<br>
@@ -55,23 +55,23 @@ or<br>
 `class public TicketMachine`<br>
 in the outer wrapper of a class?
 
-Yes, the latter isn't valid
+	Yes, the latter isn't valid
 
 * Edit the source of the `TicketMachine` class to make the change and then close the editor window.
 	* Do you notice a change in the class diagram?
 	
-	Yes
+		Yes
 	* What error message do you get when you now press the compile button?
 	
-	<identifier> expected
+		<identifier> expected
 	* Do you think this message clearly explains what is wrong?
 	
-	With some googleing, it makes some amount of sense
+		With some googleing, it makes some amount of sense
 
 ### Exercise 2.8
 * Check whether or not it is possible to leave out the word `public` from the outer wrapper of the `TicketMachine` class.
 
-It compiles and seems to run correctly.
+	It compiles and seems to run correctly.
 
 ### Exercise 2.9
 * From your earlier experimentation with the ticket machine objects within BlueJ you can probably remember the names of some of the methods – `printTicket`, for instance.
@@ -295,3 +295,29 @@ Exercise 2.38 Could either of the previous two versions be used to show the pric
 Exercise 2.39 Modify the constructor of TicketMachine so that it no longer has a parameter. Instead, the price of tickets should be fixed at 1000 cents. What effect does this have when you construct ticket machine objects within BlueJ?
 
 	BlueJ no longer prompts user input for the ticket price
+Exercise 2.40 Implement a method, empty, that simulates the effect of removing all money from the machine. This method should have a void return type, and its body should simply set the total field to zero. 
+	
+	public void empty() 
+	{
+		this.total = 0;
+	}
+Does this method need to take any parameters? 
+
+	No	
+Test your method by creating a machine, inserting some money, printing some tickets, checking the total, and then emptying the machine. Is this method a mutator or an accessor?
+	mutator
+	
+Exercise 2.41 Implement a method, setPrice, that is able to set the price of tickets to a new value. The new price is passed in as a parameter value to the method. Test your method by creating a machine, showing the price of tickets, changing the price, and then showing the new price. 
+
+	public void setPrice(int newValue)
+	{
+		this.price = newValue;
+	}
+	
+Is this method a mutator?
+
+	Yes
+	
+Exercise 2.42 Give the class two constructors. One should take a single parameter that specifies the price, and the other should take no parameter and set the price to be a default value of your choosing. Test your implementation by creating machines via the two different constructors.
+	
+	BlueJ asks to select which constructor should be used. 
